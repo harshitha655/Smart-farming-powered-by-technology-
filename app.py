@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, session
 import sqlite3
 import requests
+import os
 
 app = Flask(__name__)
 app.secret_key = "smartfarming123"
@@ -13,7 +14,6 @@ def login():
 
 @app.route("/do_login", methods=["POST"])
 def do_login():
-
     username = request.form["username"]
     password = request.form["password"]
 
@@ -42,7 +42,6 @@ def home():
 # ---------------- WEATHER ----------------
 @app.route("/weather")
 def weather():
-
     city = "Mumbai"
     api_key = "YOUR_API_KEY_HERE"
 
@@ -77,7 +76,6 @@ def farmer():
 # ---------------- ADD FARMER ----------------
 @app.route("/add_farmer", methods=["POST"])
 def add_farmer():
-
     name = request.form["name"]
     village = request.form["village"]
     crop = request.form["crop"]
@@ -99,7 +97,6 @@ def add_farmer():
 # ---------------- FARMERS LIST ----------------
 @app.route("/farmers")
 def farmers():
-
     conn = sqlite3.connect("farmers.db")
     cursor = conn.cursor()
 
@@ -114,7 +111,6 @@ def farmers():
 # ---------------- STATISTICS ----------------
 @app.route("/stats")
 def stats():
-
     conn = sqlite3.connect("farmers.db")
     cursor = conn.cursor()
 
@@ -132,4 +128,5 @@ def stats():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)

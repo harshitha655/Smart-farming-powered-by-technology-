@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistics Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f1f8e9;
+        }
+
+        .box {
+            background: white;
+            display: inline-block;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>📊 Smart Farming Statistics</h1>
+
+    <div class="box">
+        <h2>👨‍🌾 Total Farmers: {{ total }}</h2>
+    </div>
+
+    <h2>🌾 Crop Wise Data</h2>
+
+    <table>
+        <tr>
+            <th>Crop</th>
+            <th>Count</th>
+        </tr>
+
+        {% for crop in crops %}
+        <tr>
+            <td>{{ crop[0] }}</td>
+            <td>{{ crop[1] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br><br>
+    <a href="/">⬅ Back to Dashboard</a>
+
+</body>
+</html>
