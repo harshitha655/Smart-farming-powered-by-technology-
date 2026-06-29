@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmers List</title>
+</head>
+<body>
+
+    <h1>🌾 Farmers List</h1>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Village</th>
+            <th>Crop</th>
+        </tr>
+
+        {% for farmer in farmers %}
+        <tr>
+            <td>{{ farmer[0] }}</td>
+            <td>{{ farmer[1] }}</td>
+            <td>{{ farmer[2] }}</td>
+            <td>{{ farmer[3] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
