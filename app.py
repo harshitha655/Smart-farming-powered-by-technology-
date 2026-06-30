@@ -43,7 +43,7 @@ def home():
 @app.route("/weather")
 def weather():
     city = "Mumbai"
-    api_key = "YOUR_API_KEY_HERE"
+    api_key = cac8919b3bd2b0700e90c931c397d728
 
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
 

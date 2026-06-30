@@ -1,22 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Weather</title>
+    <title>Live Weather</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#e8f5e9;
+            text-align:center;
+            margin-top:80px;
+        }
+
+        .card{
+            width:350px;
+            margin:auto;
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h1{
+            color:green;
+        }
+
+        p{
+            font-size:20px;
+        }
+
+        a{
+            text-decoration:none;
+            color:white;
+            background:green;
+            padding:10px 20px;
+            border-radius:8px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <center>
+<div class="card">
 
-        <h1>🌦 Weather Report</h1>
+<h1>🌦 Live Weather</h1>
 
-        <h2>City: {{ weather.city }}</h2>
-        <h2>Temperature: {{ weather.temp }} °C</h2>
-        <h2>Condition: {{ weather.desc }}</h2>
+<h2>{{ weather.city }}</h2>
 
-        <br>
-        <a href="/">Back to Dashboard</a>
+<p><b>Temperature:</b> {{ weather.temp }} °C</p>
 
-    </center>
+<p><b>Condition:</b> {{ weather.desc }}</p>
+
+<br>
+
+<a href="/">⬅ Back to Dashboard</a>
+
+</div>
 
 </body>
 </html>
